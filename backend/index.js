@@ -49,7 +49,7 @@ app.get('/appointments', async (req, res) => {
     docClient.scan(params, (err, data) => {
         if (err) {
             console.log(err);
-            res.status(500).send(err);
+            res.status(500).send([]);
         } else {
             res.json(data.Items);
         }
@@ -74,7 +74,7 @@ app.post('/appointments', async (req, res) => {
     docClient.put(params, (err, data) => {
         if (err) {
             console.log(err);
-            res.status(500).send(err);
+            res.status(500).send([]);
         } else {
             res.json({ id, patientName, doctorName, date });
         }
@@ -95,7 +95,7 @@ app.delete('/appointments/:id', async (req, res) => {
     docClient.delete(params, (err, data) => {
         if (err) {
             console.log(err);
-            res.status(500).send(err);
+            res.status(500).send([]);
         } else {
             res.json({ message: `Appointment ${id} deleted successfully` });
         }
