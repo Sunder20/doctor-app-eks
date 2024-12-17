@@ -8,14 +8,14 @@ function App() {
     const [form, setForm] = useState({ patientName: '', doctorName: '', date: '' });
 
     useEffect(() => {
-        fetch('http://a786dd7d457d0471791aca1fc1c3046d-2106475914.us-east-1.elb.amazonaws.com/appointments')
+        fetch('http://aa86c81b2875747d3b614dfa2f73fdc8-1472962360.us-east-1.elb.amazonaws.com/appointments')
             .then(res => res.json())
             .then(data => setAppointments(data));
     }, []);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch('http://a786dd7d457d0471791aca1fc1c3046d-2106475914.us-east-1.elb.amazonaws.com/appointments', {
+        fetch('http:/aa86c81b2875747d3b614dfa2f73fdc8-1472962360.us-east-1.elb.amazonaws.com/appointments', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -27,7 +27,7 @@ function App() {
     };
 
     const handleDelete = (id) => {
-        fetch(`http://a786dd7d457d0471791aca1fc1c3046d-2106475914.us-east-1.elb.amazonaws.com/appointments/${id}`, {
+        fetch(`http://aa86c81b2875747d3b614dfa2f73fdc8-1472962360.us-east-1.elb.amazonaws.com/appointments/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())
