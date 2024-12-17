@@ -15,7 +15,7 @@ function App() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch('http:/aa86c81b2875747d3b614dfa2f73fdc8-1472962360.us-east-1.elb.amazonaws.com/appointments', {
+        fetch('http://aa86c81b2875747d3b614dfa2f73fdc8-1472962360.us-east-1.elb.amazonaws.com/appointments', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
